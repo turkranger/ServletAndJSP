@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>ServletAndJSP</display-name>
+
+	<!-- _01_InitandDestroy -->
+	<servlet>
+		<servlet-name>_01_InitandDestroy</servlet-name>
+		<servlet-class>_01_InitandDestroy.App</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>_01_InitandDestroy</servlet-name>
+		<url-pattern>/initdestroy</url-pattern>
+	</servlet-mapping>
+
+	<!-- _02_ServletConfig -->
+	<servlet>
+		<servlet-name>_02_ServletConfig</servlet-name>
+		<servlet-class>_02_ServletConfig.App</servlet-class>
+		<init-param>
+			<param-name>username</param-name>
+			<param-value>alper</param-value>
+		</init-param>
+		<init-param>
+			<param-name>password</param-name>
+			<param-value>123456</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>_02_ServletConfig</servlet-name>
+		<url-pattern>/servletconfig</url-pattern>
+	</servlet-mapping>
+
+	<!-- _03_ServletContext -->
+	<servlet>
+		<servlet-name>_03_ServletContext</servlet-name>
+		<servlet-class>_03_ServletContext.App</servlet-class>
+		<init-param>
+			<param-name>name</param-name>
+			<param-value>Alper</param-value>
+		</init-param>
+		<init-param>
+			<param-name>surname</param-name>
+			<param-value>Bagli</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>_03_ServletContext</servlet-name>
+		<url-pattern>/servletcontext</url-pattern>
+	</servlet-mapping>
+	<context-param>
+		<param-name>email</param-name>
+		<param-value>alperbagli@hotmail.com</param-value>
+	</context-param>
+	<context-param>
+		<param-name>address</param-name>
+		<param-value>Istanbul</param-value>
+	</context-param>
+
+	<!-- _04_ServletRequest_1 -->
+	<servlet>
+		<servlet-name>RequestForm</servlet-name>
+		<servlet-class>_04_ServletRequest_1.RequestForm</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RequestForm</servlet-name>
+		<url-pattern>/requestform</url-pattern>
+	</servlet-mapping>
+
+	<!-- _05_ServletResponse_1 -->
+	<servlet>
+		<servlet-name>Response_1</servlet-name>
+		<servlet-class>_05_ServletResponseCookies.Response_1</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Response_1</servlet-name>
+		<url-pattern>/response_1</url-pattern>
+	</servlet-mapping>
+
+	<!-- _05_ServletResponseCookies -->
+	<servlet>
+		<servlet-name>ResponseCookies</servlet-name>
+		<servlet-class>_05_ServletResponseCookies.ResponseCookies</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ResponseCookies</servlet-name>
+		<url-pattern>/responsecookies</url-pattern>
+	</servlet-mapping>
+
+	<!-- _05_ServletResponseDirect -->
+	<servlet>
+		<servlet-name>ResponseDirect</servlet-name>
+		<servlet-class>_05_ServletResponseCookies.ResponseDirect</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ResponseDirect</servlet-name>
+		<url-pattern>/responsedirect</url-pattern>
+	</servlet-mapping>
+
+	<!-- _06_ContextAttribute -->
+	<servlet>
+		<servlet-name>ContextAttribute</servlet-name>
+		<servlet-class>_06_ContextAttribute.ContextAttribute</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ContextAttribute</servlet-name>
+		<url-pattern>/contextattribute</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>GetContextAttribute</servlet-name>
+		<servlet-class>_06_ContextAttribute.GetContextAttribute</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GetContextAttribute</servlet-name>
+		<url-pattern>/getcontextattribute</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- _07_ServletListener -->
+
+	<!-- <listener> <listener-class>_07_ServletListener.ContextAttributeListenerImp</listener-class> 
+		</listener> -->
+	<servlet>
+		<servlet-name>ContextAttributeApp</servlet-name>
+		<servlet-class>_07_ServletListener.ContextAttributeApp</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ContextAttributeApp</servlet-name>
+		<url-pattern>/contextattributeapp</url-pattern>
+	</servlet-mapping>
+
+	<!-- _08_HttpSessionveUrlRewrite -->
+	<servlet>
+		<servlet-name>UrlRewrite</servlet-name>
+		<servlet-class>_08_HttpSessionveUrlRewrite.URLRewrite</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UrlRewrite</servlet-name>
+		<url-pattern>/urlrewrite</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>GetSession</servlet-name>
+		<servlet-class>_08_HttpSessionveUrlRewrite.GetSession</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GetSession</servlet-name>
+		<url-pattern>/getsession</url-pattern>
+	</servlet-mapping>
+
+	<!-- ****************************************************************************** -->
+	<!-- _09_JSPLifeCycle -->
+	<servlet>
+		<servlet-name>LifeCycle</servlet-name>
+		<jsp-file>/_09_JSPLifeCycle/lifeCycle.jsp</jsp-file>
+		<init-param>
+			<param-name>email</param-name>
+			<param-value>alperbagli@hotmail.com</param-value>
+		</init-param>
+
+		<init-param>
+			<param-name>parola</param-name>
+			<param-value>123456789</param-value>
+		</init-param>
+
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LifeCycle</servlet-name>
+		<url-pattern>/lifeCycle.jsp</url-pattern>
+	</servlet-mapping>
+
+	<!-- _10_JSPAttribute -->
+	<servlet>
+		<servlet-name>attribute1</servlet-name>
+		<jsp-file>/_10_JSPAttribute/attribute1.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>attribute1</servlet-name>
+		<url-pattern>/attribute1.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>attribute2</servlet-name>
+		<jsp-file>/_10_JSPAttribute/attribute2.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>attribute2</servlet-name>
+		<url-pattern>/attribute2.jsp</url-pattern>
+	</servlet-mapping>
+
+	<!-- _11_UseBean -->
+	<servlet>
+		<servlet-name>UseBeanRequestImplicit</servlet-name>
+		<servlet-class>_11_UseBean.UseBeanRequestImplicit</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UseBeanRequestImplicit</servlet-name>
+		<url-pattern>/usebeanservlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UseBeanProperty</servlet-name>
+		<servlet-class>_11_UseBean.UseBeanProperty</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UseBeanProperty</servlet-name>
+		<url-pattern>/usebeanproperty</url-pattern>
+	</servlet-mapping>
+
+	<!-- _11_UseBeanForm -->
+	<servlet>
+		<servlet-name>UseBeanParam1</servlet-name>
+		<jsp-file>/_11_UseBean/param1.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UseBeanParam1</servlet-name>
+		<url-pattern>/usebeanparam1</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UseBeanParam2</servlet-name>
+		<jsp-file>/_11_UseBean/param2.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UseBeanParam2</servlet-name>
+		<url-pattern>/usebeanparam2</url-pattern>
+	</servlet-mapping>
+
+	<!-- _12_ExpressionLanguage -->
+	<servlet>
+		<servlet-name>ExpressionLanguage</servlet-name>
+		<servlet-class>_12_Expression.ExpressionLanguage</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ExpressionLanguage</servlet-name>
+		<url-pattern>/expressionlanguage</url-pattern>
+	</servlet-mapping>
+
+	<!-- _13_Static_DynamicInclusion -->
+	<servlet>
+		<servlet-name>Static_Inclusion</servlet-name>
+		<jsp-file>/_13_Static_DynamicInclusion/app_StaticInclude.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Static_Inclusion</servlet-name>
+		<url-pattern>/staticinclusion</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>Dynamic_Inclusion</servlet-name>
+		<jsp-file>/_13_Static_DynamicInclusion/app_DynamicInclude.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Dynamic_Inclusion</servlet-name>
+		<url-pattern>/dynamicinclusion</url-pattern>
+	</servlet-mapping>
+
+<!-- _14_Jstl -->
+	<servlet>
+		<servlet-name>Jstl</servlet-name>
+		<jsp-file>/_14_Jstl/jstl.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Jstl</servlet-name>
+		<url-pattern>/jstl</url-pattern>
+	</servlet-mapping>
+
+
+
+
+</web-app>
